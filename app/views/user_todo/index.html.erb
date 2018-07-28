@@ -1,0 +1,19 @@
+  <div class="container">
+    <h1 class = "well well-success"> <%="Tareas Terminadas por #{current_user.email},#{current_user.todos.count} de 9"%></h5>
+  </div>
+  <div class="container">
+    <div class="row">
+      <% @usertodo.each_slice(3) do |row| %>
+        <% row.each do |i| %>
+        <div class="col">
+          <div class="card">
+            <img src="<%= i.photo %>" class = "card-img-top" >
+              <div class="body">
+                <h5><%= i.name %></h5>
+              </div>
+          </div>
+        </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>

@@ -1,0 +1,17 @@
+
+  <%= @todo.name %>
+</p>
+<div class="container">
+  <p>Usuarios que han completado la tarea</p>
+  <% @usertodo.todos.users.each do |e| %>
+    <p><%= e.name %></p>
+  <% end %>
+</div>
+
+<div class="container">
+  <p>Top Five De Desafio Latam</p>
+  <% @usertodo.todos.users.each.first(5) do |e| %>
+    <p><%= e.name %></p>
+    <img src="<%= e.photo %>" alt="foto user" class="img-fluid">
+  <% end %>
+</div>
